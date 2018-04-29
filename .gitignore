@@ -1,0 +1,4 @@
+node_modules
+*sublime*
+jokes.txt
+package-lock.json
