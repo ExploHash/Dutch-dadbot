@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 function Dadbot(discordclient){
-	//save discord
+	//save discord2
 	this.discordclient = discordclient;
 	//get jokes
 	this.loadJokes();
