@@ -1,5 +1,5 @@
 const fs = require('fs')
-
+//test
 function Dadbot(discordclient){
 	//save discord2
 	this.discordclient = discordclient;
