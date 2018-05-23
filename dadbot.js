@@ -20,14 +20,14 @@ Dadbot.prototype.loadJokes = function() {//read jokes to memory
 Dadbot.prototype.listen = function() {
 	this.discordclient.on('message', message => {//receives message
 		if(message.author.username != "Dad-bot"){//message not from dadbot
-			const IMwords = ["ik ben", "i'm", "i am", "im"];
+			const IMwords = ["ik ben ", "i'm ", "i am ", "im "];
 			var ikBen = this.containsWords(message.content, IMwords);
 			if(ikBen.found){
 				var identationFound = this.containsWords(ikBen.messageAfter, [".", ",", ":", ";"]);
 				if(identationFound.found){
-					message.channel.send("Hallo" + identationFound.messageBefore + ". I'm dad.");
+					message.channel.send("Hallo " + identationFound.messageBefore + ". I'm dad.");
 				}else{//Nothing found
-					message.channel.send("Hallo" + ikBen.messageAfter + ". I'm dad.");		
+					message.channel.send("Hallo " + ikBen.messageAfter + ". I'm dad.");		
 				}
 			}
 			if(this.containsWords(message.content, ["papgrap", "pap grap", "dadjoke", "dad joke"]).found){//wanner dad joke wordt gevonden
