@@ -22,7 +22,7 @@ Dadbot.prototype.listen = function() {
 		if(message.author.username != "Dad-bot"){//message not from dadbot
 			const IMwords = ["ik ben ", "i'm ", "i am ", "im "];
 			var ikBen = this.containsWords(message.content, IMwords);
-			if(ikBen.found){
+			if(ikBen.found && ikBen.position == 0){
 				var identationFound = this.containsWords(ikBen.messageAfter, [".", ",", ":", ";"]);
 				if(identationFound.found){
 					message.channel.send("Hallo " + identationFound.messageBefore + ". I'm dad.");
