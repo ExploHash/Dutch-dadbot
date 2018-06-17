@@ -34,6 +34,9 @@ Dadbot.prototype.listen = function() {
 				var id = Math.round(Math.random() * jokes.length + 1); //random id
 				message.channel.send(jokes[id]);
 			}
+			if(this.containsWords(message.content, ["ba dum tss", "badum tss", "badumtss"]).found){//wanneer een badumtss wordt gevonden
+				message.channel.send("https://media.giphy.com/media/c8bJDVz7i9KRW/giphy.gif");
+			}
 		}
 	});
 };
