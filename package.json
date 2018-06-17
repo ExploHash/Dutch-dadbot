@@ -5,7 +5,7 @@
   "main": "server.js",
   "author": "ExploHash",
   "repository": "https://github.com/ExploHash/Dutch-dadbot",
-  "license": "GPL3",
+  "license": "GPL-3.0",
   "dependencies": {
     "discord.js": "^11.3.2",
     "dotenv": "^6.0.0"
