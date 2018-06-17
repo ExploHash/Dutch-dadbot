@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const Dadbot = require('./dadbot')
+//get env
+require('dotenv').config();
 
 client.on('ready', () => {//start
   console.log('Ik ben wakker!');
