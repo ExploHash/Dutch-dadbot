@@ -7,7 +7,7 @@ function Dadbot(discordclient){
 	this.loadJokes();
 }
 
-Dadbot.prototype.badumtssGifs = ["https://media.giphy.com/media/c8bJDVz7i9KRW/giphy.gif", "https://vignette.wikia.nocookie.net/steven-universe/images/8/86/Gary-Ba-Dum-Tss-Drum-Meme-Reaction-Gif-On-Spongebob-SquarePants.gif/revision/latest"]
+Dadbot.prototype.badumtssGifs = ["https://media.giphy.com/media/c8bJDVz7i9KRW/giphy.gif", "https://media1.tenor.com/images/0a15601c186dec6682f750da9ef376ed/tenor.gif?itemid=5348673"]
 
 Dadbot.prototype.loadJokes = function() {//read jokes to memory
 	fs.readFile('./jokes.txt', 'utf8', function (err,data) {
@@ -34,12 +34,12 @@ Dadbot.prototype.listen = function() {
 				}
 			}
 			if(this.containsWords(message.content, ["papgrap", "pap grap", "dadjoke", "dad joke"]).found){//wanner dad joke wordt gevonden
-				var id = Math.round(Math.random() * jokes.length + 1); //random id
+				var id = Math.round(Math.random() * (jokes.length - 1)); //random id
 				message.channel.send(jokes[id]);
 			}
 			if(this.containsWords(message.content, ["ba dum tss", "badum tss", "badumtss"]).found){//wanneer een badumtss wordt gevonden
-				var id = Math.round(Math.random() * this.badumtssGifs.length + 1); //random id
-				message.channel.send(badumtssGifs[id]);
+				var id = Math.round(Math.random() * (this.badumtssGifs.length - 1)); //random id
+				message.channel.send(this.badumtssGifs[id]);
 			}
 		}
 	});
