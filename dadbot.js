@@ -7,9 +7,12 @@ function Dadbot(discordclient){
 	this.loadJokes();
 }
 
+Dadbot.prototype.badumtssGifs = ["https://media.giphy.com/media/c8bJDVz7i9KRW/giphy.gif", "https://vignette.wikia.nocookie.net/steven-universe/images/8/86/Gary-Ba-Dum-Tss-Drum-Meme-Reaction-Gif-On-Spongebob-SquarePants.gif/revision/latest"]
+
 Dadbot.prototype.loadJokes = function() {//read jokes to memory
 	fs.readFile('./jokes.txt', 'utf8', function (err,data) {
 		if (err) {
+			this.jokes = ["I don't know any jokes... Please feed me some in the jokes.txt"];
 			return console.log(err);
 		}else{
 			this.jokes = data.split("\n");
@@ -35,7 +38,8 @@ Dadbot.prototype.listen = function() {
 				message.channel.send(jokes[id]);
 			}
 			if(this.containsWords(message.content, ["ba dum tss", "badum tss", "badumtss"]).found){//wanneer een badumtss wordt gevonden
-				message.channel.send("https://media.giphy.com/media/c8bJDVz7i9KRW/giphy.gif");
+				var id = Math.round(Math.random() * this.badumtssGifs.length + 1); //random id
+				message.channel.send(badumtssGifs[id]);
 			}
 		}
 	});
